@@ -5,7 +5,7 @@ This project implemented by:
 * CSS
 * Html 
   
-It's a website that shows all the Covid-19 data among the world, using a diffrent API's to get all needed informations. 
+It's a website that shows all the Covid-19 data among the world, using different APIs to get all the needed information. 
 
 * Countries API Link [Link Here](https://corona-api.com/countries)
 * Covid-19 API Link [Link Here](https://restcountries.herokuapp.com/api/v1)
