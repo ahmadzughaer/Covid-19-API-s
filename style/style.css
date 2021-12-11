@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* main screen */
+.container {
+  display: flex;
+}
+.allCountreis {
+  margin: 5%;
+}
+.cases {
+  padding: 10%;
+  display: flex;
+  flex-direction: column;
+}
+.regions {
+  padding: 10%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons {
+  display: flex;
+}
+
+button {
+  width: 15vmin;
+  margin: 5px;
+  background: goldenrod;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  padding: 2px;
+}
+
+button:hover {
+  border: 2px solid black;
+  background: black;
+  color: #fff;
+}
+
+.countriesList {
+  width: 12vw;
+  height: 25vh;
+  overflow: visible;
+  overflow-x: hidden;
+  margin-left: 30%;
+}
+
+.countriesList li {
+  cursor: pointer;
+  padding: 3px;
+  list-style: none;
+}
+
+.countriesList li:hover {
+  background: rgba(128, 128, 128, 0.76);
+  color: #fff;
+}
+
+.countryData {
+  display: flex;
+  position: absolute;
+  padding: 50px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.countryData-wrapper {
+  display: none;
+  width: 100%;
+  height: 30%;
+}
+
+.chart {
+  width: 50%;
+  margin: 5%;
+}
+.countryData div {
+  border-radius: 50%;
+  height: 15vmin;
+  width: 25vmin;
+  margin: 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.deaths {
+  color: brown;
+  border: 2px solid brown;
+}
+.recovered {
+  color: green;
+  border: 2px solid green;
+}
+
+.critical {
+  color: orangered;
+  border: 2px solid orangered;
+}
+.confirmed {
+  color: rgb(228, 213, 8);
+  border: 2px solid rgb(228, 213, 8);
+}
+
+/* responsive design*/
+
+@media (max-width: 600px) {
+  .container {
+    display: block;
+  }
+  .chart {
+    width: 90% !important ;
+  }
+  .chart h1 {
+    font-size: 3vmin;
+  }
+
+  .countryData {
+    left: 40%;
+    top: 400px;
+    display: block;
+  }
+
+  button {
+    width: 20vmin;
+
+  }
+  .countryData h2 {
+    font-size: 4vmin;
+  }
+  .countriesList {
+    width: 30vw;
+    height: 25vh;
+    margin-left: 10%;
+  }
+}

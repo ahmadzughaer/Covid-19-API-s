@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid-19 Statstics Map</title>
+    <script src="/script/script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" ></script>
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="chart">
+            <h1>Covid-19 World Data</h1>
+            <canvas id="casesChart"></canvas>
+            <div class="countryData-wrapper">
+                <div class="countryData">
+                    <span></span>
+                    <div class="confirmed">
+                        <h2>Confirmed</h2>
+                        <p></p>
+                    </div>
+                    <div class="deaths">
+                        <h2>Deaths</h2>
+                        <p></p>
+                    </div>
+                    <div class="recovered">
+                        <h2>Recoverd</h2>
+                        <p></p>
+                    </div>
+                    <div class="critical">
+                        <h2>Critical</h2>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="allCountreis">
+
+            <div class="buttons">
+                <div class="cases">
+                    <button>Confirmed</button>
+                    <button>Deaths</button>
+                    <button>Recovered</button>
+                    <button>Critical</button>
+                </div>
+                <div class="regions">
+                    <button>Asia</button>
+                    <button>Europe</button>
+                    <button>Africa</button>
+                    <button>Americas</button>
+                    <button>Oceania</button>
+                </div>
+            </div>
+            <div class="countriesList">
+                <h3>All the Countries</h3><br>
+                <div class="regionCountries"></div>
+            </div>
+        </div>
+
+    </div>
+ 
+</body>
+</html>
