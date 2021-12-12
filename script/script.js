@@ -26,6 +26,7 @@ async function getCountries() {
     }
 }
 
+
 async function getCovidData() {
     try {
         let covidData = await (await fetch(Covid_19URL)).json()
@@ -41,6 +42,8 @@ async function getCovidData() {
 getCountries().then(() => {
     getCovidData()
 })
+
+
 
 let chart = document.getElementById('casesChart').getContext('2d'); 
 let casesChart = new Chart(chart, {
@@ -59,7 +62,18 @@ let casesChart = new Chart(chart, {
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                },
+                gridLines: {
+                    display: false
+                }
+            }],
+            xAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                },
+                gridLines: {
+                    display: false
                 }
             }]
         }
@@ -104,6 +118,7 @@ const updateDataByRegion = (region) => {
     }
 }
 
+
 const updateData = (dataType) => {
     removeStats(casesChart);
     currentData = dataType;
@@ -139,7 +154,7 @@ const getRegionCountries =(region)=> {
 
     document.querySelector('.regionCountries').innerHTML = '';
     for (let country of currentRegionCountries) {
-        document.querySelector('.regionCountries').insertAdjacentHTML('beforeend', `<li class='${country}'>${country}</li>`);
+        document.querySelector('.regionCountries').insertAdjacentHTML('beforeend', `<li>${country}</li>`);
     }
 }
 
@@ -182,7 +197,13 @@ const updateRegionChart =()=> {
     updateTitle(currentRegion, currentData);
 }
 
+const showCountriesList = () => {
+  let countryList=   document.querySelector('.countriesList')
+  countryList.style.display = 'block';
+}
+
 document.querySelector('.buttons ').addEventListener('click', (event) => {
+    showCountriesList()
     switch (event.target.innerText) {
         case 'Asia':
             currentRegion = 'Asia';
@@ -224,9 +245,7 @@ document.querySelector('.buttons ').addEventListener('click', (event) => {
 })
 
 document.querySelector('.countriesList').addEventListener('click', (el) => {
-
     document.querySelector('.countryData-wrapper').style.display = 'block';
-
     let countryInfo = document.querySelector('.countryData')
     let [confirmed, deaths, recovered, critical, ] = countryInfo.querySelectorAll('p');
     confirmed.innerText = coronaInfo[el.target.innerText][0];

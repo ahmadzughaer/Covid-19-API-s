@@ -44,6 +44,7 @@ button:hover {
 }
 
 .countriesList {
+  display: none;
   width: 12vw;
   height: 25vh;
   overflow: visible;
